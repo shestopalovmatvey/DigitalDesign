@@ -35,67 +35,86 @@
             </nav>
         </div>
     </header>
-    <div class="wrapper">
-        <div class="banner">
-            <div class="banner__text">
-                <p>Выбери свою категорию товаров</p>
-            </div>
-            <div class="banner__img">
-                <img src="Assets/img/Banner/Banner_image2.png" alt="image">
-            </div>
-        </div>
-
-        <div class="category__list">
-            <div id="iphone" class="category">
-                <h2 class="category__title">Apple IPhone</h2>
-                <div class="category__cards category__iphone">
+    <main>
+        <div class="wrapper">
+            <div class="intro">
+                <div class="intro__text">
+                    <p>Выбери свою категорию товаров</p>
+                </div>
+                <div class="intro__img">
+                    <img src="Assets/img/intro/image.png" alt="image">
                 </div>
             </div>
-
-            <div id="headphones" class="category__list">
-                <div class="category headphones">
-                    <h2 class="category__title">Наушники</h2>
-                    <div class="category__cards category__headphones">
+    
+            <div class="category__list">
+                <div id="iphone" class="category">
+                    <h2 class="category__title">Apple IPhone</h2>
+                    <div class="category__cards category__iphone">
+                    </div>
+                </div>
+    
+                <div id="headphones" class="category__list">
+                    <div class="category headphones">
+                        <h2 class="category__title">Наушники</h2>
+                        <div class="category__cards category__headphones">
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="laptop" class="category__list">
+                    <div class="category laptop">
+                        <h2 class="category__title">Ноутбуки</h2>
+                        <div class="category__cards category__laptop">
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div id="laptop" class="category__list">
-                <div class="category laptop">
-                    <h2 class="category__title">Ноутбуки</h2>
-                    <div class="category__cards category__laptop">
-                    </div>
+        </div>
+    
+        <div class="purchase-form hidden">
+            <form class="purchase-form__form">
+                <label for="quantity" class="purchase-form__label">Количество:</label>
+                <input type="number" id="quantity" name="quantity" class="purchase-form__input" min="1" required>
+          
+                <label class="purchase-form__label">Цвет:</label>
+                <div class="purchase-form__color-options">
+                    <input type="radio" id="color1" name="color" value="color1" class="purchase-form__radio" required>
+                    <label for="color1" class="purchase-form__radio-label">Цвет 1</label>
+          
+                    <input type="radio" id="color2" name="color" value="color2" class="purchase-form__radio" required>
+                    <label for="color2" class="purchase-form__radio-label">Цвет 2</label>
+          
+                    <input type="radio" id="color3" name="color" value="color3" class="purchase-form__radio" required>
+                    <label for="color3" class="purchase-form__radio-label">Цвет 3</label>
                 </div>
+          
+                <label for="comment" class="purchase-form__label">Комментарий:</label>
+                <textarea id="comment" name="comment" class="purchase-form__textarea" maxlength="2000"></textarea>
+          
+                <div class="purchase-form__buttons">
+                    <button type="submit" class="purchase-form__submit-button">Купить</button>
+                    <button type="button" class="purchase-form__close-button">Закрыть</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__category">
+                <ul class="footer__category-list">
+                    <li class="footer__category-element">
+                        <a class="footer__link" href="#iphone">Apple IPhone</a>
+                    </li>
+                    <li class="footer__category-element">
+                        <a class="footer__link" href="#headphones">Наушники</a>
+                    </li>
+                    <li class="footer__category-element">
+                        <a class="footer__link" href="#laptop">Ноутбуки</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-
-    <div class="purchase-form hidden">
-        <form class="purchase-form__form">
-            <label for="quantity" class="purchase-form__label">Количество:</label>
-            <input type="number" id="quantity" name="quantity" class="purchase-form__input" min="1" required>
-      
-            <label class="purchase-form__label">Цвет:</label>
-            <div class="purchase-form__color-options">
-                <input type="radio" id="color1" name="color" value="color1" class="purchase-form__radio" required>
-                <label for="color1" class="purchase-form__radio-label">Цвет 1</label>
-      
-                <input type="radio" id="color2" name="color" value="color2" class="purchase-form__radio" required>
-                <label for="color2" class="purchase-form__radio-label">Цвет 2</label>
-      
-                <input type="radio" id="color3" name="color" value="color3" class="purchase-form__radio" required>
-                <label for="color3" class="purchase-form__radio-label">Цвет 3</label>
-            </div>
-      
-            <label for="comment" class="purchase-form__label">Комментарий:</label>
-            <textarea id="comment" name="comment" class="purchase-form__textarea" maxlength="2000"></textarea>
-      
-            <div class="purchase-form__buttons">
-                <button type="submit" class="purchase-form__submit-button">Купить</button>
-                <button type="button" class="purchase-form__close-button">Закрыть</button>
-            </div>
-        </form>
-    </div>
+    </footer>
     <script src="JS/data.js"></script>
     <script src="JS/createCard.js"></script>
     <script src="JS/form.js"></script>
