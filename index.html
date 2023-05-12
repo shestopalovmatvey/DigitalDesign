@@ -13,31 +13,36 @@
 </head>
 <body>
     <header>
-        <div class="header">
-            <div class="logo">
-                <h2 class="logo__text">DigDes</h2>
-                <span class="material-symbols-outlined">
-                    public
-                </span>
+        <div class="wrapper">
+            <div class="header">
+                <div class="logo">
+                    <h2 class="logo__text">DigDes</h2>
+                    <span class="material-symbols-outlined">
+                        public
+                    </span>
+                </div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#iphone" class="menu__link">Apple IPhone</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#headphones" class="menu__link">Наушники</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#laptop" class="menu__link">Ноутбуки</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="menu">
-                <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="#iphone" class="menu__link">Apple IPhone</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="#headphones" class="menu__link">Наушники</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="#laptop" class="menu__link">Ноутбуки</a>
-                    </li> 
-                </ul>
-            </nav>
+        </div>
+        <div class="theme-toggle">
+            <button class="theme-toggle__button">Светлая тема</button>
         </div>
     </header>
     <main>
         <div class="wrapper">
-            <div class="intro">
+            <div class="intro intro_lightTheme">
                 <div class="intro__text">
                     <p>Выбери свою категорию товаров</p>
                 </div>
@@ -73,29 +78,46 @@
     
         <div class="purchase-form hidden">
             <form class="purchase-form__form">
-                <label for="quantity" class="purchase-form__label">Количество:</label>
-                <input type="number" id="quantity" name="quantity" class="purchase-form__input" min="1" required>
-          
-                <label class="purchase-form__label">Цвет:</label>
-                <div class="purchase-form__color-options">
-                    <input type="radio" id="color1" name="color" value="color1" class="purchase-form__radio" required>
-                    <label for="color1" class="purchase-form__radio-label">Цвет 1</label>
-          
-                    <input type="radio" id="color2" name="color" value="color2" class="purchase-form__radio" required>
-                    <label for="color2" class="purchase-form__radio-label">Цвет 2</label>
-          
-                    <input type="radio" id="color3" name="color" value="color3" class="purchase-form__radio" required>
-                    <label for="color3" class="purchase-form__radio-label">Цвет 3</label>
+                <div class="purchase-input">
+                    <label for="quantity" class="purchase-form__label">Количество:</label>
+                    <input type="number" id="quantity" name="quantity" class="purchase-form__input" min="1" max="10" required>
                 </div>
-          
-                <label for="comment" class="purchase-form__label">Комментарий:</label>
-                <textarea id="comment" name="comment" class="purchase-form__textarea" maxlength="2000"></textarea>
+                            
+                <div class="purchase-form__color-options">
+                    <label class="purchase-form__label">Цвет:</label>
+                    <div class="purchase-form__radio-list">
+                        <div class="purchase-form__radio-element">
+                            <input type="radio" id="color1" name="color" value="color1" class="purchase-form__radio" required>
+                            <label for="color1" class="purchase-form__radio-label">Цвет 1</label>
+                        </div>
+                        
+                        <div class="purchase-form__radio-element">
+                            <input type="radio" id="color2" name="color" value="color2" class="purchase-form__radio" required>
+                            <label for="color2" class="purchase-form__radio-label">Цвет 2</label>
+                        </div>
+
+                        <div class="purchase-form__radio-element">
+                            <input type="radio" id="color3" name="color" value="color3" class="purchase-form__radio" required>
+                            <label for="color3" class="purchase-form__radio-label">Цвет 3</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="purchase-form__comment">
+                    <label for="comment" class="purchase-form__label">Комментарий:</label>
+                    <textarea id="comment" name="comment" class="purchase-form__textarea" maxlength="2000" placeholder="Оставьте свой отзыв..."></textarea>
+                </div>
+                
           
                 <div class="purchase-form__buttons">
-                    <button type="submit" class="purchase-form__submit-button">Купить</button>
-                    <button type="button" class="purchase-form__close-button">Закрыть</button>
+                    <button type="submit" class="purchase-form__btn purchase-form__submit-button">Купить</button>
+                    <button type="button" class="purchase-form__btn purchase-form__close-button">Закрыть</button>
                 </div>
             </form>
+        </div>
+
+        <div class="button__scroll-toTop">
+            <a class="scroll-toTop">Наверх!</a>
         </div>
     </main>
     <footer class="footer">
@@ -118,5 +140,7 @@
     <script src="JS/data.js"></script>
     <script src="JS/createCard.js"></script>
     <script src="JS/form.js"></script>
+    <script src="JS/changeTheme.js"></script>
+    <script src="JS/btn-Scroll.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ body {
 
 header {
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -29,12 +29,10 @@ header {
 }
 
 .header {
-    width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin: 0 auto;
+    padding: 17px 20px;
 }
 
 .logo {
@@ -79,17 +77,63 @@ header {
     box-shadow: 2px 2px 5px #3b6587;
 }
 
+.theme-toggle__button {
+    position: fixed;
+    top: 18px;
+    right: 40px;
+    padding: 5px 10px;
+    background-color: #333;
+    cursor: pointer;
+    color: white;
+}
+
+/* Theme */
+
+.body__darkTheme {
+    background-color: #000;
+}
+
+.intro_darkTheme {
+    background-color: #333;
+}
+
+.intro_lightTheme {
+    background-color: #101010;
+}
+
+.card__darkTheme {
+    background-color: #333;
+    color: #fff;
+}
+
+.card__lightTheme {
+    background-color: #fff;
+    color: #101010;
+}
+
+.category__title-darkTheme {
+    color: #fff;
+}
+
+.product-card__buy-button-lightTheme {
+    background-color: #101010;
+    color: #fff;
+}
+
+.product-card__buy-button-darkTheme {
+    background-color: coral;
+}
+
 /* intro */
 
 .intro {
     width: 100%;
     height: 200px;
     padding: 70px 130px;
-    margin-top: 50px;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #101010;
     border-radius: 30px;
 }
 
@@ -129,7 +173,7 @@ header {
 }
 
 .card {
-    width: 17%;
+    width: 22%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +181,6 @@ header {
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
 }
 
 .card__image {
@@ -147,26 +190,25 @@ header {
 }
 
 .card__data {
-    margin-top: 5px;
+    margin-top: 10px;
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .card__title {
-    margin-top: 5px;
+    margin-top: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .product-card__buy-button {
     margin-top: 5px;
     margin-bottom: 10px;
-    padding: 5px 35px;
+    padding: 7px 35px;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    background-color: #101010;
-    color: #fff;
+    font-weight: 500;
     border: 0;
     border-radius: 11px;
     cursor: pointer;
@@ -200,12 +242,115 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #101010;
+    font-weight: 500;
+}
+
+.purchase-form__form {
+    width: 35%;
+    height: 50%;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 30px 50px;
+}
+
+.purchase-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.purchase-form__label {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.purchase-form__input {
+    margin-left: 10px;
+    padding: 10px;
+    outline: none;
+    border: 0;
+    background-color: #101010;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.purchase-form__color-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.purchase-form__radio-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px 70px;
+}
+
+.purchase-form__comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.purchase-form__textarea {
+    width: 100%;
+    height: 22vh;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.purchase-form__textarea::placeholder {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.purchase-form__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.purchase-form__btn {
+    padding: 7px 15px;
+    border-radius: 10px;
+    background-color: #101010;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hidden {
     display: none;
 }
 
+/* scroll to top */
+
+.scroll-toTop {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1000;
+    display: none;
+    text-decoration: none;
+    color: #fff;
+    background-color: #101010;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    text-align: center;
+    border-radius: 30px;
+    margin: 15px 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
 
 /* footer */
 
@@ -229,3 +374,7 @@ header {
     text-decoration: none;
 }
 
+
+@media screen and (max-width: 1024px) {
+
+}

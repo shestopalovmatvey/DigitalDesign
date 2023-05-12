@@ -3,6 +3,13 @@ const purchaseForm = document.querySelector('.purchase-form');
 const closeButton = document.querySelector('.purchase-form__close-button');
 const body = document.querySelector('body')
 const form = document.querySelector('.purchase-form__form');
+const valueProduct = document.querySelector('.purchase-form__input');
+
+const clearValueInForm = () => {
+  purchaseForm.classList.add('hidden');
+  body.style.overflow = 'scroll';
+  valueProduct.value = "";
+};
 
 buyButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -12,13 +19,12 @@ buyButtons.forEach((button) => {
 });
 
 closeButton.addEventListener('click', () => {
-  purchaseForm.classList.add('hidden');
-  body.style.overflow = 'scroll';
+  clearValueInForm();
 });
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   // Обработка отправки формы
   alert('Покупка совершена!');
-  purchaseForm.classList.add('hidden');
+  clearValueInForm();
 });

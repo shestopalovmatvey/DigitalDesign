@@ -6,20 +6,16 @@ const getDayInfo = (dateString) =>  {
     const [day, month, year] = dateString.split('.');
     const date = new Date(year, month - 1, day);
   
-    // Получение полного названия дня недели
     const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
     const dayOfWeek = daysOfWeek[date.getDay()];
   
-    // Получение номера недели в месяце
     const firstDayOfMonth = new Date(year, month - 1, 1);
     const pastDaysOfMonth = Math.floor((date - firstDayOfMonth) / (24 * 60 * 60 * 1000)) + 1;
     const weekNumber = Math.ceil(pastDaysOfMonth / 7);
   
-    // Получение названия месяца
     const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
     const monthName = months[month - 1];
   
-    // Формирование результата
     const formattedDate = `${dayOfWeek}, ${weekNumber} неделя ${monthName} ${year} года`;
     return formattedDate;
 };
@@ -27,7 +23,7 @@ const getDayInfo = (dateString) =>  {
 const generateCards = (data, categoryCard) => {
     data.forEach(product => {
         const card = document.createElement('div');
-        card.classList.add('card', 'card__iphone');
+        card.classList.add('card', 'card__lightTheme');
 
         const img = document.createElement('img')
         img.src = product.imageSrc;
@@ -37,7 +33,6 @@ const generateCards = (data, categoryCard) => {
 
         const date = document.createElement('p')
         date.classList.add('card__data');
-        console.log(getDayInfo(product.date))
         date.textContent = `Добавлено: ${getDayInfo(product.date)}`;
         card.appendChild(date)
 
@@ -47,7 +42,7 @@ const generateCards = (data, categoryCard) => {
         card.appendChild(title)
 
         const button = document.createElement('button');
-        button.classList.add('product-card__buy-button');
+        button.classList.add('product-card__buy-button', 'product-card__buy-button-lightTheme');
         button.textContent = 'Купить';
         card.appendChild(button);
 
