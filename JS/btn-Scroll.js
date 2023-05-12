@@ -12,11 +12,9 @@ bntScroll.addEventListener('click', () => {
 window.addEventListener('scroll', () => {
     let scrollY = window.scrollY || document.documentElement.scrollTop;
     
-    if (window.innerWidth > 768) {
-
-        (scrollY > 50) ? bntScroll.style.display = 'inline-block' : bntScroll.style.display = 'none';
+    if (scrollY > 50) {
+        bntScroll.style.display = 'inline-block';
     } else {
-        bntScroll.style.fontSize = '7px';
-        (scrollY > 300) ? bntScroll.style.display = 'inline-block' : bntScroll.style.display = 'none';
+        bntScroll.style.display = 'none';
     }
 })
