@@ -492,6 +492,10 @@ header {
         font-size: 10px;
     }
 
+    .purchase-form__radio-list {
+        gap: 6px 10px;
+    }
+
     .scroll-toTop {
         padding: 0.3em 0.7em;
         font-size: 13px;
@@ -517,6 +521,23 @@ header {
 
         .menu__link {
             font-size: 9px;
+        }
+
+        .purchase-form__form {
+            width: 80%;
+            height: 34%;
+        }
+
+        .purchase-form__color-options {
+            flex-wrap: wrap;
+        }
+
+        .purchase-form__radio-list {
+            margin-top: 15px;
+        }
+
+        .purchase-form__textarea {
+            height: 10vh;
         }
     }
     
