@@ -540,5 +540,62 @@ header {
             height: 10vh;
         }
     }
+
+    @media screen and (max-width: 450px) {
+        .wrapper {
+            width: 90%;
+        }
+
+        .wrapper__min {
+            width: 100%;
+        }
+
+        .header {
+            width: 100%;
+        }
+
+        .menu__item {
+            margin-right: 4px;
+        }
+
+        .menu__link {
+            font-size: 8px;
+        }
+
+        .theme-toggle__button {
+            padding: 3px;
+            font-size: 8px;
+        }
+
+        .card {
+            width: 44%;
+        }
+
+        .intro__img {
+            bottom: 3.5px;
+        }
+
+        .intro__img img {
+            width: 200px;
+        }
+
+        .purchase-form__form {
+            width: 80%;
+            height: 72%;
+        }
+
+        .purchase-form__radio-element {
+            font-size: 11px;
+        }
+
+        .purchase-form__radio {
+            margin-right: 5px;
+        }
+        
+        .purchase-form__textarea {
+            height: 15vh;
+        }
+
+    }
     
 }

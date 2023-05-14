@@ -51,4 +51,3 @@ btnTheme.addEventListener('click', () => {
         addTheme(dark);
     }
 });
-
