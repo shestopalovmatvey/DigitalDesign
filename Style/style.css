@@ -24,7 +24,7 @@ header {
     left: 0;
     z-index: 100;
     background-color: #333;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.25) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .25) 100%);
     color: #fff;
 }
 
@@ -86,43 +86,6 @@ header {
     color: white;
 }
 
-/* Theme */
-
-.body__darkTheme {
-    background-color: #000;
-}
-
-.intro_darkTheme {
-    background-color: #333;
-}
-
-.intro_lightTheme {
-    background-color: #101010;
-}
-
-.card__darkTheme {
-    background-color: #333;
-    color: #fff;
-}
-
-.card__lightTheme {
-    background-color: #fff;
-    color: #101010;
-}
-
-.category__title-darkTheme {
-    color: #fff;
-}
-
-.product-card__buy-button-lightTheme {
-    background-color: #101010;
-    color: #fff;
-}
-
-.product-card__buy-button-darkTheme {
-    background-color: coral;
-}
-
 /* intro */
 
 .intro {
@@ -140,7 +103,7 @@ header {
     color: #fff;
     font-size: 30px;
     font-weight: 600;
-    
+
 }
 
 .intro__img {
@@ -177,13 +140,14 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card__image {
-    max-width: 100%;
+    width: 130px;
+    height: 115px;
     display: block;
     margin: 0 auto;
 }
@@ -247,10 +211,9 @@ header {
 
 .purchase-form__form {
     width: 35%;
-    height: 50vh;
     border-radius: 30px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 30px 50px;
 }
 
@@ -355,48 +318,168 @@ header {
 
 /* footer */
 
-.footer__category {
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
     margin-top: 35px;
-    padding: 25px 10px; 
+    padding: 25px 50px;
     background-color: #333;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.25) 100%);
-    border-radius: 10px 10px 0px 0px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .25) 100%);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer__logo-text {
+    color: #fffF;
+    margin-bottom: 10px;
+}
+
+.footer__info-text {
+    font-size: 0.8em;
+    color: #808080;
+}
+
+.footer__info-text .named {
+    font-weight: 700;
+    color: #BC8F8F;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__title {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fff;
+}
+
+.footer__title p {
+    margin-bottom: 15px;
+}
+
+.footer__icon {
+    margin-right: 10px;
+}
+
+.footer__icon:last-child {
+    margin-right: 0;
+}
+
+.footer__icon-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon__element {
+    width: 50px;
+    height: 50px;
+}
+
+.footer__category {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 .footer__category-list {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     list-style: none;
 }
 
+.footer__category-element {
+    margin-bottom: 20px;
+}
+
 .footer__link {
-    color: #fff;
+    color: #C0C0C0;
     text-decoration: none;
 }
 
-@media screen and (max-width: 3000px) {
 
-    .purchase-form__form {
-        width: 35%;
-        height: 43%;
-    }
+/* Theme */
 
-    .scroll-toTop {
-        right: 87px;
-        bottom: 17px;
-    }
+.body__darkTheme {
+    background-color: #000;
+}
 
+.intro_darkTheme {
+    background-color: #333;
+}
+
+.intro_lightTheme {
+    background-color: #101010;
+}
+
+.card__darkTheme {
+    background-color: #333;
+    color: #fff;
+}
+
+.card__lightTheme {
+    background-color: #fff;
+    color: #101010;
+}
+
+.category__title-darkTheme {
+    color: #fff;
+}
+
+.product-card__buy-button-lightTheme {
+    background-color: #101010;
+    color: #fff;
+}
+
+.product-card__buy-button-darkTheme {
+    background-color: coral;
+}
+
+/* Scroll */
+::-webkit-scrollbar {
+    width: 15px;
+    /* Ширина скроллбара */
+}
+
+::-webkit-scrollbar-track {
+    background: #dfd8d8;
+    /* Цвет фона трека скролла */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    /* Цвет ползунка скролла */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+input[type="number"] {
+    -moz-appearance: textfield; /* Для Firefox */
 }
 
 
+
 @media screen and (max-width: 2000px) {
-
-    .purchase-form__form {
-        width: 35%;
-        height: 60%;
-    }
-
     .scroll-toTop {
         right: 87px;
         bottom: 17px;
@@ -409,20 +492,16 @@ header {
         width: 1000px;
     }
 
-    .purchase-form__form {
-        height: 55%;
-    }
-
     .purchase-form__input {
         width: 30%;
         text-align: center;
     }
-    
+
     .purchase-form__radio-list {
         align-items: center;
         gap: 5px 40px;
     }
-    
+
     .purchase-form__radio-element {
         font-size: 14px;
     }
@@ -448,7 +527,6 @@ header {
 
     .purchase-form__form {
         width: 50%;
-        height: 45%;
     }
 
     .purchase-form__input {
@@ -459,12 +537,12 @@ header {
     .purchase-form__color-options {
         width: 100%;
     }
-    
+
     .purchase-form__radio-list {
         align-items: center;
         gap: 5px 30px;
     }
-    
+
     .purchase-form__radio-element {
         font-size: 14px;
     }
@@ -529,11 +607,6 @@ header {
         font-size: 10px;
     }
 
-    .purchase-form__form {
-        width: 50%;
-        height: 53%;
-    }
-
     .purchase-form__radio-list {
         gap: 6px 10px;
     }
@@ -560,7 +633,7 @@ header {
         right: 10px;
     }
 
-    @media screen and (max-width: 430px) {
+    @media screen and (max-width: 450px) {
         .wrapper {
             width: 90%;
         }
@@ -604,7 +677,6 @@ header {
 
         .purchase-form__form {
             width: 80%;
-            height: 59%;
         }
 
         .purchase-form__color-options {
@@ -623,14 +695,10 @@ header {
         .purchase-form__radio {
             margin-right: 5px;
         }
-        
-        .purchase-form__textarea {
-            height: 15vh;
-        }
 
         .footer__link {
             font-size: 13px;
         }
     }
-    
+
 }

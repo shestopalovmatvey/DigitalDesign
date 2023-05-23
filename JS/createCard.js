@@ -1,6 +1,6 @@
 const cardsOfIphone = document.querySelector('.category__iphone');
-const cardsOfHeadphones = document.querySelector('.category__headphones')
-const cardsOfLaptop = document.querySelector('.category__laptop')
+const cardsOfHeadphones = document.querySelector('.category__headphones');
+const cardsOfLaptop = document.querySelector('.category__laptop');
 
 const getDayInfo = (dateString) =>  {
     const [day, month, year] = dateString.split('.');
@@ -49,7 +49,6 @@ const generateCards = (data, categoryCard) => {
         categoryCard.appendChild(card);
     });
 }
-
 
 function main() {
     generateCards(dataOfIphone, cardsOfIphone);

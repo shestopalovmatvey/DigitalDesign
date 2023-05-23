@@ -24,7 +24,6 @@ closeButton.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  // Обработка отправки формы
   alert('Покупка совершена!');
   clearValueInForm();
 });

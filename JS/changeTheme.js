@@ -8,71 +8,98 @@ const textAreaInForm = document.querySelector('.purchase-form__textarea');
 const btnForm = document.querySelectorAll('.purchase-form__btn');
 const labelForRadio = document.querySelectorAll('.purchase-form__radio-label');
 
+const themes = {
+    light: {
+        bodyClass: 'body__lightTheme',
+        btnText: 'Светлая тема',
+        introClass: 'intro_lightTheme',
+        cardClass: 'card__lightTheme',
+        titleClass: 'category__title-lightTheme',
+        buyBtnClass: 'product-card__buy-button-lightTheme',
+        bntScrollBgColor: '#101010',
+        formBgColor: '#fff',
+        labelColor: '#101010',
+        inputBgColor: '#101010',
+        textAreaBgColor: '#fff',
+        textAreaColor: '#101010',
+        radioLabelColor: '#101010',
+        btnBgColor: '#101010',
+        btnColor: '#fff',
+    },
+    dark: {
+        bodyClass: 'body__darkTheme',
+        btnText: 'Темная тема',
+        introClass: 'intro_darkTheme',
+        cardClass: 'card__darkTheme',
+        titleClass: 'category__title-darkTheme',
+        buyBtnClass: 'product-card__buy-button-darkTheme',
+        bntScrollBgColor: 'coral',
+        formBgColor: '#101010',
+        labelColor: '#fff',
+        inputBgColor: '#333',
+        textAreaBgColor: '#333',
+        textAreaColor: '#fff',
+        radioLabelColor: '#fff',
+        btnBgColor: 'coral',
+        btnColor: '#101010',
+    },
+};
+  
 const removeTheme = (theme) => {
-    if (theme == "light") {
-        cards.forEach(card => card.classList.remove('card__lightTheme'));
-        buyButtons.forEach(btn => btn.classList.remove('product-card__buy-button-lightTheme'));
-        banner.classList.remove('intro_lightTheme');
-    } else {
-        cards.forEach(card => card.classList.remove('card__darkTheme'));
-        buyButtons.forEach(btn => btn.classList.remove('product-card__buy-button-darkTheme'));
-        banner.classList.remove('intro_darkTheme');
-    }
-}
-    
+    const themeData = themes[theme];
+    body.classList.remove(themeData.bodyClass);
+    banner.classList.remove(themeData.introClass);
+    cards.forEach((card) => card.classList.remove(themeData.cardClass));
+    titles.forEach((title) => title.classList.remove(themeData.titleClass));
+    buyButtons.forEach((btn) => btn.classList.remove(themeData.buyBtnClass));
 
+    //form.style
+    form.style.backgroundColor = themeData.formBgColor;
+    labelForForm.forEach((label) => (label.style.color = themeData.labelColor));
+    inputInForm.style.backgroundColor = themeData.inputBgColor;
+    textAreaInForm.style.backgroundColor = themeData.textAreaBgColor;
+    textAreaInForm.style.color = themeData.textAreaColor;
+    labelForRadio.forEach((label) => (label.style.color = themeData.radioLabelColor));
+
+    btnForm.forEach((btn) => {
+        btn.style.backgroundColor = themeData.btnBgColor;
+        btn.style.color = themeData.btnColor;
+    });
+
+    bntScroll.style.backgroundColor = themeData.bntScrollBgColor;
+    btnTheme.textContent = themeData.btnText;
+  };
+  
 const addTheme = (theme) => {
-    if (theme == "light") {
-        btnTheme.textContent = 'Светлая тема';
-        body.classList.remove('body__darkTheme');
-        banner.classList.add('intro_lightTheme');
-        cards.forEach(card => card.classList.add('card__lightTheme'));
-        titles.forEach(title => title.classList.remove('category__title-darkTheme'));
-        buyButtons.forEach(btn => btn.classList.add('product-card__buy-button-lightTheme'));
-        bntScroll.style.backgroundColor = '#101010';
-        form.style.backgroundColor = '#fff';
-        labelForForm.forEach(label => label.style.color = "#101010");
-        inputInForm.style.backgroundColor = '#101010';
-        textAreaInForm.style.backgroundColor = '#fff';
-        textAreaInForm.style.color = '#101010';
-        labelForRadio.forEach(label => label.style.color = '#101010');
-        btnForm.forEach(btn => {
-            btn.style.backgroundColor = '#101010';
-            btn.style.color = '#fff';
-        });
-    } else {
-        btnTheme.textContent = 'Темная тема';
-        body.classList.add('body__darkTheme');
-        banner.classList.add('intro_darkTheme');
-        cards.forEach(card => card.classList.add('card__darkTheme'));
-        titles.forEach(title => title.classList.add('category__title-darkTheme'));
-        buyButtons.forEach(btn => btn.classList.add('product-card__buy-button-darkTheme'));
-        bntScroll.style.backgroundColor = 'coral';
-        labelForForm.forEach(label => label.style.color = "#fff")
-        form.style.backgroundColor = '#101010';
-        inputInForm.style.backgroundColor = '#333';
-        textAreaInForm.style.backgroundColor = '#333';
-        textAreaInForm.style.color = '#fff';
-        labelForRadio.forEach(label => label.style.color = '#fff');
-        btnForm.forEach(btn => {
-            btn.style.backgroundColor = 'coral';
-            btn.style.color = '#101010';
-        });
-    }
-}
+    const themeData = themes[theme];
+    body.classList.add(themeData.bodyClass);
+    banner.classList.add(themeData.introClass);
+    cards.forEach((card) => card.classList.add(themeData.cardClass));
+    titles.forEach((title) => title.classList.add(themeData.titleClass));
+    buyButtons.forEach((btn) => btn.classList.add(themeData.buyBtnClass));
 
+    //form.style
+    form.style.backgroundColor = themeData.formBgColor;
+    labelForForm.forEach((label) => (label.style.color = themeData.labelColor));
+    inputInForm.style.backgroundColor = themeData.inputBgColor;
+    textAreaInForm.style.backgroundColor = themeData.textAreaBgColor;
+    textAreaInForm.style.color = themeData.textAreaColor;
+    labelForRadio.forEach((label) => (label.style.color = themeData.radioLabelColor));
 
+    btnForm.forEach((btn) => {
+        btn.style.backgroundColor = themeData.btnBgColor;
+        btn.style.color = themeData.btnColor;
+    });
+
+    bntScroll.style.backgroundColor = themeData.bntScrollBgColor;
+    btnTheme.textContent = themeData.btnText;
+};
+  
 btnTheme.addEventListener('click', () => {
-    const isDarkTheme = body.classList.contains('body__darkTheme');
-    const light = 'light';
-    const dark = 'dark';
-
-
-    if (isDarkTheme) {
-        removeTheme(dark);
-        addTheme(light);
-    } else {
-        removeTheme(light);
-        addTheme(dark);
-    }
+    const isDarkTheme = body.classList.contains(themes.dark.bodyClass);
+    const themeToApply = isDarkTheme ? 'light' : 'dark';
+    const themeToRemove = isDarkTheme ? 'dark' : 'light';
+  
+    removeTheme(themeToRemove);
+    addTheme(themeToApply);
 });
