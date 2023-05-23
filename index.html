@@ -86,9 +86,15 @@
             <form class="purchase-form__form">
                 <div class="purchase-input">
                     <label for="quantity" class="purchase-form__label">Количество:</label>
-                    <input type="number" id="quantity" name="quantity" class="purchase-form__input" min="1" max="10"
-                        required>
+                    <div class="change__value-form">
+                        <button type="button" class="quantity-button quantity-increase">+</button>
+                        <input type="number" id="quantity" name="quantity" class="purchase-form__input" min="1" max="10"
+                            required value="1">
+                        <button type="button" class="quantity-button quantity-decrease">-</button>
+
+                    </div>
                 </div>
+
 
                 <div class="purchase-form__color-options">
                     <label class="purchase-form__label">Цвет:</label>
@@ -191,4 +197,5 @@
     <script src="JS/changeTheme.js"></script>
     <script src="JS/btn-Scroll.js"></script>
 </body>
+
 </html>

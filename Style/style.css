@@ -229,8 +229,13 @@ header {
     font-size: 1.3em;
 }
 
+.change__value-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .purchase-form__input {
-    margin-left: 10px;
     padding: 10px;
     outline: none;
     border: 0;
@@ -239,7 +244,25 @@ header {
     border-radius: 10px;
     font-size: 15px;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
+}
+
+.quantity-button {
+    width: 35px;
+    font-size: 1.4em;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #333;
+    border: 0;
+}
+
+.quantity-increase {
+    margin-right: 10px;
+}
+
+.quantity-decrease {
+    margin-left: 10px;
 }
 
 .purchase-form__color-options {
@@ -247,6 +270,7 @@ header {
     justify-content: space-between;
     margin-bottom: 30px;
 }
+
 
 .purchase-form__radio-list {
     display: flex;
@@ -358,6 +382,7 @@ header {
 }
 
 .footer__title {
+    padding-right: 5px;
     text-align: center;
     font-size: 1.2em;
     font-weight: 500;
@@ -465,7 +490,7 @@ header {
     background: #333;
     /* Цвет ползунка скролла */
 }
-
+/* input */
 input[type="number"]::-webkit-inner-spin-button,
 
 input[type="number"]::-webkit-outer-spin-button {
@@ -490,11 +515,6 @@ input[type="number"] {
 @media screen and (max-width: 1500px) {
     .wrapper {
         width: 1000px;
-    }
-
-    .purchase-form__input {
-        width: 30%;
-        text-align: center;
     }
 
     .purchase-form__radio-list {
@@ -532,6 +552,19 @@ input[type="number"] {
     .purchase-form__input {
         width: 30%;
         text-align: center;
+    }
+
+    .quantity-button {
+        width: 25px;
+        padding: 2px 5px;
+    }
+
+    .quantity-increase {
+        margin-right: 2px;
+    }
+
+    .quantity-decrease {
+        margin-left: 2px;
     }
 
     .purchase-form__color-options {
