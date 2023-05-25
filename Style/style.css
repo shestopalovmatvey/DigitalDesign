@@ -35,7 +35,7 @@ header {
     padding: 17px 20px;
 }
 
-.logo {
+.header__logo {
     display: flex;
     align-items: center;
 }
