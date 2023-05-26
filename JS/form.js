@@ -4,6 +4,8 @@ const closeButton = document.querySelector('.purchase-form__close-button');
 const body = document.querySelector('body')
 const form = document.querySelector('.purchase-form__form');
 const valueProduct = document.querySelector('.purchase-form__input');
+const textArea = document.querySelector('.purchase-form__textarea');
+const listOfRadio = document.querySelectorAll('.purchase-form__radio');
 const increaseButton = document.querySelector('.quantity-increase');
 const decreaseButton = document.querySelector('.quantity-decrease');
 const MAX_VALUE = parseInt(valueProduct.getAttribute('max'));
@@ -24,9 +26,13 @@ decreaseButton.addEventListener('click', () => {
 })
 
 const clearValueInForm = () => {
+  listOfRadio.forEach(radio => 
+    radio.checked = false
+  );
   purchaseForm.classList.add('hidden');
+  textArea.value = '';
   body.style.overflow = 'scroll';
-  valueProduct.value = "1";
+  valueProduct.value = '1';
 };
 
 buyButtons.forEach((button) => {
